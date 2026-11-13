@@ -29,12 +29,12 @@ RMSE is reported as a secondary metric.
 | Results and model selection | [docs/results.md](docs/results.md) |
 | Setup and reproducing the results | [docs/setup.md](docs/setup.md) |
 | Running the API locally and with Docker | [docs/api.md](docs/api.md) |
-| Deployment to AWS Elastic Beanstalk (TODO) | [docs/deployment-aws.md](docs/deployment-aws.md) |
+| Deployment to AWS Elastic Beanstalk | [docs/deployment-aws.md](docs/deployment-aws.md) |
 
 ## Quick start
 
 ```bash
-https://github.com/kkzzbb/delivery-eta.git
+git clone https://github.com/kkzzbb/delivery-eta.git
 cd delivery-eta
 python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
