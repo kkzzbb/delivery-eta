@@ -33,16 +33,39 @@ RMSE is reported as a secondary metric.
 
 ## Quick start
 
+Clone the repository and go into the project folder:
+
 ```bash
-git clone https://github.com/kkzzbb/delivery-eta.git
-cd delivery-eta
-python -m venv .venv
+git clone <your-repository-url>
+cd <project-folder>
+```
+
+Then choose one option:
+
+**Option 1: run with Docker**
+
+```bash
+docker build -t delivery-duration .
+docker run --rm -p 9696:9696 delivery-duration
+python3 predict_test.py            # in a second terminal
+```
+
+**Option 2: run locally with Python** (also needed for the notebook, training and tests)
+
+```bash
+python3 -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements-dev.txt
-python -m src.train                # writes model.bin
 uvicorn src.predict:app --port 9696
-python predict_test.py             # in a second terminal
 ```
+
+In a second terminal:
+
+```bash
+python3 predict_test.py
+```
+
+Response: `{"predicted_minutes": 30.4, "distance_km": 20.18}`
 
 ## Repository structure
 
